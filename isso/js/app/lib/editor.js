@@ -15,7 +15,6 @@ define(["app/dom", "app/i18n"], function($, i18n) {
 
         el.on("blur", function() {
             if (el.textContent.length === 0) {
-                el.textContent = i18n.translate("postbox-text");
                 el.classList.add("placeholder");
             }
         });

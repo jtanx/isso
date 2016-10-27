@@ -10,9 +10,10 @@ div(class='isso-comment' id='isso-#{comment.id}')
             else
                 span(class='author')
                     = bool(comment.author) ? comment.author : i18n('comment-anonymous')
-            span(class="spacer") &bull;
-            a(class='permalink' href='#isso-#{comment.id}')
-                time(title='#{humanize(comment.created)}' datetime='#{datetime(comment.created)}')
+            br
+            small
+                a(class='permalink' href='#isso-#{comment.id}')
+                    time(title='#{humanize(comment.created)}' datetime='#{datetime(comment.created)}')
             span(class='note')
                 = comment.mode == 2 ? i18n('comment-queued') : comment.mode == 4 ? i18n('comment-deleted') : ''
 
@@ -25,12 +26,10 @@ div(class='isso-comment' id='isso-#{comment.id}')
         div(class='isso-comment-footer')
             if conf.vote
                 a(class='upvote' href='#')
-                    != svg['arrow-up']
-                span(class='spacer') |
                 a(class='downvote' href='#')
-                    != svg['arrow-down']
-            a(class='reply' href='#') #{i18n('comment-reply')}
-            a(class='edit' href='#') #{i18n('comment-edit')}
-            a(class='delete' href='#') #{i18n('comment-delete')}
+            if comment.parent
+                a(class='reply' href='#')
+            else
+                a(class='reply' href='#') #{i18n('comment-reply')}
 
         div(class='isso-follow-up')

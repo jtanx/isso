@@ -1,17 +1,23 @@
 div(class='isso-postbox')
     div(class='form-wrapper')
+        p(class='input-wrapper')
+            label(for='author') Pseudo
+                small  (Obligatoire)
+            input(type='text' name='author'
+                  value=author !== null ? '#{author}' : '')
+        p(class='input-wrapper')
+            label(for='email') Email
+            input(type='email' name='email'
+                  value=email != null ? '#{email}' : '')
+        p(class='input-wrapper')
+            label(for='website') Website
+            input(type='text' name='website' placeholder='http://'
+                  value=website != null ? '#{website}' : '')
         div(class='textarea-wrapper')
+            label Commentaire
+                small  (Obligatoire)
             div(class='textarea placeholder' contenteditable='true')
-                = i18n('postbox-text')
+                = ''
         section(class='auth-section')
-            p(class='input-wrapper')
-                input(type='text' name='author' placeholder=i18n('postbox-author')
-                      value=author !== null ? '#{author}' : '')
-            p(class='input-wrapper')
-                input(type='email' name='email' placeholder=i18n('postbox-email')
-                      value=email != null ? '#{email}' : '')
-            p(class='input-wrapper')
-                input(type='text' name='website' placeholder=i18n('postbox-website')
-                      value=website != null ? '#{website}' : '')
             p(class='post-action')
-                input(type='submit' value=i18n('postbox-submit'))
+                input(type='submit' value='Poster')

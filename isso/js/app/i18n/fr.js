@@ -6,7 +6,7 @@ define({
     "postbox-submit": "Soumettre",
     "num-comments": "{{ n }} commentaire\n{{ n }} commentaires",
     "no-comments": "Aucun commentaire pour l'instant",
-    "comment-reply": "Répondre",
+    "comment-reply": "→ Répondre",
     "comment-edit": "Éditer",
     "comment-save": "Enregistrer",
     "comment-delete": "Supprimer",
