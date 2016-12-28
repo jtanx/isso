@@ -195,7 +195,7 @@ class SocketHTTPServer(HTTPServer, ThreadingMixIn):
     multiprocess = False
 
     allow_reuse_address = 1
-    address_family = socket.AF_UNIX
+    address_family = socket.AF_INET
 
     request_queue_size = 128
 
