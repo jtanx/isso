@@ -5,7 +5,7 @@ import sys
 
 from setuptools import setup, find_packages
 
-requires = ['itsdangerous', 'misaka>=1.0,<2.0', 'html5lib==0.9999999', 'Jinja2']
+requires = ['itsdangerous', 'misaka>=2.0,<2.0', 'html5lib==0.9999999', 'Jinja2']
 
 if (3, 0) <= sys.version_info < (3, 3):
     raise SystemExit("Python 3.0, 3.1 and 3.2 are not supported")
@@ -38,6 +38,7 @@ setup(
         ':python_version=="2.6" or python_version=="2.7"': ['ipaddr>=2.1', 'configparser', 'werkzeug>=0.8'],
         ':python_version!="2.6" and python_version!="2.7"': ['werkzeug>=0.9']
     },
+    setup_requires=["cffi>=1.3.0"],
     entry_points={
         'console_scripts':
             ['isso = isso:main'],
