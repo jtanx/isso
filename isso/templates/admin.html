@@ -197,6 +197,7 @@ function send_edit(com_id, hash, isso_host_script) {
         {% else %}
           <span class='author' id="isso-author-{{comment.id}}">Anonymous</span>
         {% endif %}
+        <span id="isso-ip-{{comment.id}}"> {{comment.remote_addr}}</span>
         {% if comment.email %}
           (<span id="isso-email-{{comment.id}}">{{comment.email}}</span> <a href="mailto:{{comment.email}}" rel='nofollow' class='email'>mailto</a>)
         {% else %}
