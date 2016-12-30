@@ -193,9 +193,9 @@ function send_edit(com_id, hash) {
           <div>Thread: {{comment.title}} (<a href="{{comment.uri}}">{{comment.uri}}</a>)</div><br />
         {% endif %}
         {% if comment.author %}
-          <span class='author' id="isso-author-{{comment.id}}">{{comment.author}}</span>
+          <span class='author' id="isso-author-{{comment.id}}">{{comment.author}} ({{comment.remote_addr}})</span>
         {% else %}
-          <span class='author' id="isso-author-{{comment.id}}">Anonymous</span>
+          <span class='author' id="isso-author-{{comment.id}}">Anonymous ({{comment.remote_addr}})</span>
         {% endif %}
         {% if comment.email %}
           (<span id="isso-email-{{comment.id}}">{{comment.email}}</span> <a href="mailto:{{comment.email}}" rel='nofollow' class='email'>mailto</a>)
